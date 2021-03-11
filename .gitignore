@@ -42,3 +42,5 @@ Icon?
 ehthumbs.db
 Thumbs.db
 
+## i think this is not important and only causes problems
+*.log
