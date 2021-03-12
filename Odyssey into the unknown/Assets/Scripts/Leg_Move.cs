@@ -8,7 +8,7 @@ public class Leg_Move : MonoBehaviour
 
     public LayerMask Layer;
 
-    public float MaxLenght = 20;
+    public float MaxLenght = 20.0f;
 
     [Header("Test Parameters")]
 
@@ -19,11 +19,14 @@ public class Leg_Move : MonoBehaviour
     }*/
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
-
-
-
+        RaycastHit hit;
+        if(Physics.Raycast(RayStart.transform.position, Vector3.down, out hit))
+        {
+            Debug.DrawLine(RayStart.transform.position, hit.point, Color.green);
+            HitMark.transform.position = hit.point;
+        }
     }
 }
 
