@@ -44,3 +44,4 @@ Thumbs.db
 
 ## i think this is not important and only causes problems
 *.log
+*.exe[0123456789].log
