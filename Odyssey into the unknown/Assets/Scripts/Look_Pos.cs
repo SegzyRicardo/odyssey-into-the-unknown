@@ -5,7 +5,7 @@ using UnityEngine;
 public class Look_Pos : MonoBehaviour
 {
     public Camera cam;
-    public float MaxLenght = 5000;
+    public float MaxLenght = 2000;
     public LayerMask Layer;
     public Transform obj;
 
@@ -17,6 +17,11 @@ public class Look_Pos : MonoBehaviour
         {
             Debug.DrawLine(cam.transform.position, hit.point, Color.blue);
             obj.transform.position = hit.point;
+        }
+        else
+        {
+            Debug.DrawLine(cam.transform.position, ray.GetPoint(MaxLenght), Color.yellow);
+            obj.transform.position = ray.GetPoint(MaxLenght);
         }
             
     }
